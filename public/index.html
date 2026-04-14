@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutrinoX | AI Nutrition Intelligence</title>
+    <meta name="description" content="NutrinoX - Context-aware AI nutrition assistant that analyzes eating habits and provides realtime guidance.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>NutrinoX</h1>
+            </div>
+            <p class="subtitle">Thinks. Predicts. Advises.</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="chat">Coach</button>
+            <button class="tab-btn" data-tab="log">Log Food</button>
+            <button class="tab-btn" data-tab="insights">Insights</button>
+        </nav>
+
+        <main class="content-area">
+            <!-- Chat Tab -->
+            <section id="chat" class="tab-content active">
+                <div class="chat-container">
+                    <div class="chat-history" id="chatHistory">
+                        <div class="message system">
+                            <div class="avatar">N</div>
+                            <div class="bubble">Hello. I am NutrinoX. What's on your mind regarding your nutrition?</div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <textarea id="chatInput" placeholder="Ask about your diet, meals, or goals..." rows="1" maxlength="1000"></textarea>
+                        <button id="sendChatBtn" class="primary-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Log Food Tab -->
+            <section id="log" class="tab-content">
+                <div class="log-card glass-panel">
+                    <h2>Record a Meal</h2>
+                    <p class="hint">Type what you ate naturally.</p>
+                    <textarea id="foodInput" placeholder="e.g. 2 eggs with toast and black coffee at 9am" rows="3" maxlength="500"></textarea>
+                    <button id="logFoodBtn" class="primary-btn full-width">Log Meal</button>
+                    <div id="logStatus" class="status-message"></div>
+                </div>
+                
+                <div class="recent-logs-section">
+                    <h3>Recent Entries <button id="refreshLogs" class="icon-btn">↻</button></h3>
+                    <div class="logs-list" id="logsList">
+                        <p class="empty-state">No meals logged yet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Insights Tab -->
+            <section id="insights" class="tab-content">
+                <div class="insights-grid">
+                    
+                    <!-- Symptom Check -->
+                    <div class="insight-card glass-panel">
+                        <h3>😷 Symptom Decoder</h3>
+                        <p class="hint">Feel tired or bloated? Let's find out why.</p>
+                        <input type="text" id="symptomInput" placeholder="e.g. Brain fog after lunch" maxlength="500">
+                        <button id="btnSymptom" class="secondary-btn">Analyze</button>
+                        <div id="symptomResult" class="result-box"></div>
+                    </div>
+
+                    <!-- Meal Explainer -->
+                    <div class="insight-card glass-panel">
+                        <h3>🔬 Meal Explainer</h3>
+                        <p class="hint">Understand how a specific meal affects you.</p>
+                        <input type="text" id="explainInput" placeholder="e.g. White rice and dal" maxlength="500">
+                        <button id="btnExplain" class="secondary-btn">Explain</button>
+                        <div id="explainResult" class="result-box"></div>
+                    </div>
+
+                    <!-- Habit Analyzer -->
+                    <div class="insight-card glass-panel full-span">
+                        <div class="card-header">
+                            <h3>📊 Habit Analyzer</h3>
+                            <button id="btnHabits" class="secondary-btn small">Generate Report</button>
+                        </div>
+                        <p class="hint">Discovers patterns in your recent food logs.</p>
+                        <div id="habitResult" class="result-box"></div>
+                    </div>
+
+                    <!-- Alternatives -->
+                    <div class="insight-card glass-panel full-span">
+                        <h3> cravings Alternatives</h3>
+                        <p class="hint">Craving something unhealthy?</p>
+                        <div class="inline-input">
+                            <input type="text" id="cravingInput" placeholder="e.g. Ice cream late night" maxlength="200">
+                            <button id="btnSuggest" class="secondary-btn">Suggest</button>
+                        </div>
+                        <div id="suggestResult" class="result-box"></div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Spinner Template -->
+    <template id="spinnerTpl">
+        <div class="spinner"></div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
