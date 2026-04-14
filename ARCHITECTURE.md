@@ -1,6 +1,6 @@
 # NutrinoX — Architecture Document
 
-> **AI Nutrition Intelligence System** | Groq API · llama3-70b-8192 · Node.js + Express
+> **AI Nutrition Intelligence System** | Groq API · llama-3.3-70b-versatile · Node.js + Express
 
 ---
 
@@ -37,7 +37,7 @@ NutrinoX is a single-user, server-rendered nutrition intelligence application. I
 ┌──────────────────────▼──────────────────────────────────────┐
 │            Groq Cloud API  (External)                       │
 │    POST /openai/v1/chat/completions                         │
-│    Model: llama3-70b-8192   ·   Timeout: 10 s              │
+│    Model: llama-3.3-70b-versatile   ·   Timeout: 10 s              │
 └─────────────────────────────────────────────────────────────┘
 ```
 

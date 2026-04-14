@@ -1,6 +1,6 @@
 # NutrinoX – AI Nutrition Intelligence System
 
-> An AI-powered nutrition intelligence system that helps users make smarter food decisions in real time — powered by Groq API and llama3-70b-8192.
+> An AI-powered nutrition intelligence system that helps users make smarter food decisions in real time — powered by Groq API and llama-3.3-70b-versatile.
 
 **Core Philosophy**: Thinks. Predicts. Advises.
 
@@ -19,7 +19,7 @@ NutrinoX is a context-aware AI nutrition assistant that analyzes your eating hab
 NutrinoX uses a thin-client / thick-server architecture.
 - **Frontend**: Vanilla JS, HTML, CSS (< 50KB payload), Single Page Application
 - **Backend**: Node.js, Express
-- **AI Core**: Groq API (llama3-70b-8192)
+- **AI Core**: Groq API (llama-3.3-70b-versatile)
 - **Data Storage**: Local JSON file (`store.json`) for zero dependencies
 
 ```
